@@ -22,22 +22,22 @@ You can verify the docker is up, by opening your Portainer and checking the new 
 For some strange reason when I created the dockers, users and password was not enforced on InfluxDB  , so if needed :
 * Open portainer , select the InfluxDB container and go to console and run : $ influx 
 
-> CREATE USER <username> WITH PASSWORD '<password>' WITH ALL PRIVILEGES  
+CREATE USER <username> WITH PASSWORD '<password>' WITH ALL PRIVILEGES  
 Check DB or create new with:
 Connected to http://localhost:8086 version 1.8.4
 InfluxDB shell version: 1.8.4
-> show databases
+show databases
 name: databases
 name
 ----
 _internal
 Homekit
-> show users
+show users
 user    admin
 ----    -----
 admin   true
 homekit true
-> Create database NAME 
+Create database NAME 
 More info here: https://docs.influxdata.com/influxdb/v1.8/administration/authentication_and_authorization/#user-management-commands 
 Then you need to change your config file to have Auth Enabled. This can be done again in portainer console.  
 You need to install VI or NANO ($sudo apt update and then $sudo apt install nano).
