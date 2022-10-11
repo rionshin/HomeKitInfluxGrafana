@@ -126,4 +126,5 @@ Now when you have your strategy for data formating we need to decide what data w
 
 You can use combination of this and it is important to note that for Timers there are 2 options:
 * using EVE app timer (which i dont  like)
-* use Homebridge plugin as Homebridge-Sheduler or homebridge-dummyswitch. I use Sscheduler and create few different switches which turn on/off on every 2,3,5min and i use them as event trigger for writing to influx. 
+* use Homebridge plugin as Homebridge-Sheduler or homebridge-dummyswitch. I use Sscheduler and create few different switches which turn on/off on every 2,3,5min and i use them as event trigger for writing to influx.
+* The homebridge plugin: ` https://github.com/kbrashears5/typescript-homebridge-schedule#readme `
