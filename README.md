@@ -85,8 +85,9 @@ Go and get SSL certificate , it is really cheap - around 10$ per year.
 
 You can setup the SSL to your Influx instance, however as i already have NGINX installed I created proxy in NGINX that forward   port 8087 with enabled SSL to   8086 where is influx instance with no ssl. 
 
-The config file is located in the repository named: __ nginx-influxproxy.local __
+The config file is located in the repository named as : ` nginx-influxproxy.local `
 
 ### Please dont forget to create port mapping on your router for all ports you are using as they need to be reachable from outside. 
+
 If you dont have NGINX installed you can watch any guide or read this article
-' https://www.supereasy.com/how-to-configure-nginx-as-a-https-reverse-proxy-easily/ ' 
+` https://www.supereasy.com/how-to-configure-nginx-as-a-https-reverse-proxy-easily/ `
