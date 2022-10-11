@@ -112,4 +112,9 @@ Measurement,room tag,device tag  Value
 Homekit,room=bathroom,device=Light,name=Led status=1
 Measurement,room tag,device tag,name tag Value
 ```
-Measurement is the same as Table name in MS SQL for example, TAGs are columns, and Value is the column again which contains the value for this tags (boolean, float, string)
+Measurement is the same as Table name in MS SQL for example, TAGs are columns, and Value is the column containing the value for this tags (boolean, float, string)
+Please note that you cannot place different formats in Value columns, 
+if the column is created as float - you inserted a number then you cannot insert a string. 
+
+It is really important to keep attention on the synthax you dont have spaces between tags, and you have space and no `,` before Value. 
+When you entering digits/boolean no need to put `" "` , you must use `" "` for string values. 
