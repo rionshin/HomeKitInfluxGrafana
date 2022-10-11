@@ -40,7 +40,9 @@ homekit true
 > Create database NAME 
 More info here: https://docs.influxdata.com/influxdb/v1.8/administration/authentication_and_authorization/#user-management-commands 
 Then you need to change your config file to have Auth Enabled. This can be done again in portainer console.  You need to install VI or NANO ($sudo apt update and then $sudo apt install nano).
-Open config file located in /etc/influxdb/  --> check s1.png 
+Open config file located in /etc/influxdb/
+root@ :/# cd /etc/influxdb/
+root@ :/etc/influxdb# nano influxdb.conf   
 and then edit the config and add following lines on the bottom:
 [http]
   enabled = true
