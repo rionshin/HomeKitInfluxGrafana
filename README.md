@@ -14,7 +14,7 @@ Connect to SSH to your linux machine and run :
 
 `curl -sk https://raw.githubusercontent.com/rionshin/HomeKitInfluxGrafana/main/InstallDocker_Portainer | sudo bash - `
 
-Go to http://IP:9000 to connect to Portainer and seyup your user/pass on 1st login. 
+Go to http://IP:9000 to connect to Portainer and setup your user/pass on 1st login. 
 
 Install docker compose: 
 ``` 
@@ -24,7 +24,7 @@ docker compose version
 ```
 Create a folder in your Home(or wherever you want) - I created /home/pi/influx where you need to place telegraf.comf and docker-compose.yaml 
 go to the folder you created and run:
-$ docker compose up -d  
+` docker compose up -d`  
 
 This will create dockers for  Telegraf, Grafana and InfluxDB - please note as I am using 32 image of rasbian os I installed influxDB v1.8 and not 2.0+
 
