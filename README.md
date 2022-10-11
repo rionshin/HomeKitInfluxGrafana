@@ -136,7 +136,19 @@ Open home app , new automation and select how automation will be triggered :
 * then you need to select accessorie to control but you scroll down and select convert to shortcut  
 * in shortcut view you will use few main elements: 
 ```
-* 1
-* 2 
-* 3
+* Get the State of Home
+* Round 
+* Combine text
+* Get Content of URL 
+```
+* We are preparing as much GET we need, which must be followed by round number to ones place 
+* When you get all measures you need you are creating Combine text containing:
+```
+Homekit,room=kitchen,device=TempSensor temperature={YOUR VARIABLE FROM ROUND KITCHEN TEMP}
+Homekit,room=kitchen,device=TempSensor humidity={YOUR VARIABLE FROM ROUND KITCHEN HUMIDITY}
+Homekit,room=bedroom,device=TempSensor temperature=...
+Homekit,room=bedroom,device=TempSensor humidity=...
+Homekit,room=bathroom,device=TempSensor temperature=...
+Homekit,room=bathroom,device=TempSensor humidity=...
+Last option on combine must be select NEW LINES  - This will make all combined text each on new line. 
 ```
