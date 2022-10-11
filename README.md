@@ -23,7 +23,7 @@ $ docker compose up -d
 
 This will create dockers for  Telegraf, Grafana and InfluxDB - please note as I am using 32 image of rasbian os I installed influxDB v1.8 and not 2.0+
 * If you need guide how to easily install InfluxDB v2+ you can check this guide: https://www.youtube.com/watch?v=QGG_76OmRnA   
-* You can verify the docker is up, by opening your Portainer and checking the new docker containers or runnning $ docker container ps 
+* You can verify the docker is up, by opening your Portainer and checking the new docker containers or runnning ` $ docker container ps `
 
 For some strange reason when I created the dockers, users and password was not enforced on InfluxDB  ,so if needed :
 
@@ -47,12 +47,12 @@ Create database NAME
 ```
 *More info here: https://docs.influxdata.com/influxdb/v1.8/administration/authentication_and_authorization/#user-management-commands 
 * Then you need to change your config file to have Auth Enabled. This can be done again in portainer console.  
-* You need to install VI or NANO ($sudo apt update and then $sudo apt install nano).
-
+* You need to install VI or NANO (`**sudo apt update** and then **sudo apt install nano**`).
+```
 Open config file located in /etc/influxdb/
 root@ :/# cd /etc/influxdb/
 root@ :/etc/influxdb# nano influxdb.conf   
-
+```
 and then edit the config and add following lines on the bottom:
 ```
 [http]
