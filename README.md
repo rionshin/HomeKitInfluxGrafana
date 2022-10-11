@@ -75,3 +75,14 @@ and then edit the config and add following lines on the bottom:
 Going forward when you connect to your influxdb via console the command will be:
 
 `influx -username USER -password PASS`
+
+## Homekit can connect only to valid SSL addresses for that reason you need SSL certificate and ofcourse valid IP and FQDN. 
+
+Configure your DNS A record to map to your IP where your machine is located, you can map it to your router IP and then portforwarding to your internal machine with Influx, etc. 
+Go and get SSL certificate , it is really cheap - around 10$ per year. 
+You can setup the SSL to your Influx instance, however as i already have NGINX installed I created proxy in NGINX that forward   port 8087 with enabled SSL to   8086 where is influx instance with no ssl. 
+
+The config file is located in the repository named: nginx-influxproxy.local
+
+** Please dont forget to create port mapping on your router for all ports you are using as they need to be reachable from outside. **
+** If you dont have NGINX installed you can watch any guide
