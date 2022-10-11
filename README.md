@@ -28,7 +28,7 @@ This will create dockers for  Telegraf, Grafana and InfluxDB - please note as I 
 For some strange reason when I created the dockers, users and password was not enforced on InfluxDB  ,so if needed :
 
 Open portainer , select the InfluxDB container and go to console and run : 
-$ influx 
+` influx ` 
 ```
 CREATE USER username WITH PASSWORD 'password' WITH ALL PRIVILEGES  
 ```
