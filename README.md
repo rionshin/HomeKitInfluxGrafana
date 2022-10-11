@@ -1,11 +1,11 @@
 # HomeKitInfluxGrafana
 Homekit data ingestion in InfluxDB and visualisation in Grafana
 
-How to setup InfluxDB, grafana and Homekit .
+# How to setup InfluxDB, grafana and Homekit .
 
-## Prerequisites: 
+### Prerequisites: 
 
-### You need a linux machine(VM, raspberry pi,etc), SSL certificate (not self signed)
+###  You need a linux machine(VM, raspberry pi,etc), SSL certificate (not self signed)
 
 Install Docker and Portainer ,  you can watch this amazing guide https://www.youtube.com/watch?v=kykvC2cGlNQ&t=0s  and I use part of his scripts to easy install what I need. 
 
