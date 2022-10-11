@@ -7,6 +7,10 @@ Homekit data ingestion in InfluxDB and visualisation in Grafana
 
 ###  You need a linux machine(VM, raspberry pi,etc), SSL certificate (not self signed)
 
+I have homebridge image installed on Raspberry PI4, you can install stardart debian, or rasbian, you need linux instace :)  
+
+##Lets START: 
+
 Install Docker and Portainer ,  you can watch this amazing guide https://www.youtube.com/watch?v=kykvC2cGlNQ&t=0s  and you can use part of his scripts to easy install what you need.
 
 Connect to SSH to your linux machine and run : 
@@ -91,3 +95,5 @@ The config file is located in the repository named as : ` nginx-influxproxy.loca
 
 If you dont have NGINX installed you can watch any guide or read this article
 ` https://www.supereasy.com/how-to-configure-nginx-as-a-https-reverse-proxy-easily/ `
+
+With all this setup and installed you now have linux 
