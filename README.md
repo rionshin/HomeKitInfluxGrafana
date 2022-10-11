@@ -123,6 +123,7 @@ Now when you have your strategy for data formating we need to decide what data w
 * for all temperature sensors, thermostats and slow changing states I use Timer on every 5min to trigger collection of data and send it to InfluxAPI
 * for all lights and switches as I dont really care for exact time when I turn it on, I use again time that collect light and switch statuses every 2 min. 
 * for all security sensors as door contacts, motion sensors, gas detectors , smoke detectors I use when device is triggered even to write to influxdb
+
 You can use combination of this and it is important to note that for Timers there are 2 options:
 * using EVE app timer (which i dont  like)
 * use Homebridge plugin as Homebridge-Sheduler or homebridge-dummyswitch. I use Sscheduler and create few different switches which turn on/off on every 2,3,5min and i use them as event trigger for writing to influx. 
