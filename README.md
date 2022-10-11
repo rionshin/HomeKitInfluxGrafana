@@ -22,8 +22,10 @@ go to the folder you created and run:
 $ docker compose up -d  
 
 This will create dockers for  Telegraf, Grafana and InfluxDB - please note as I am using 32 image of rasbian os I installed influxDB v1.8 and not 2.0+
-* If you need guide how to easily install InfluxDB v2+ you can check this guide: https://www.youtube.com/watch?v=QGG_76OmRnA   
-* You can verify the docker is up, by opening your Portainer and checking the new docker containers or runnning ` $ docker container ps `
+
+If you need guide how to easily install InfluxDB v2+ you can check this guide: https://www.youtube.com/watch?v=QGG_76OmRnA   
+
+You can verify the docker is up, by opening your Portainer and checking the new docker containers or runnning  ` docker container ps `
 
 For some strange reason when I created the dockers, users and password was not enforced on InfluxDB  ,so if needed :
 
