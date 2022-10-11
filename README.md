@@ -9,7 +9,7 @@ Homekit data ingestion in InfluxDB and visualisation in Grafana
 
 I have homebridge image installed on Raspberry PI4, you can install stardart debian, or rasbian, you need linux instace :)  
 
-##Lets START: 
+## Lets START: 
 
 Install Docker and Portainer ,  you can watch this amazing guide https://www.youtube.com/watch?v=kykvC2cGlNQ&t=0s  and you can use part of his scripts to easy install what you need.
 
@@ -96,4 +96,20 @@ The config file is located in the repository named as : ` nginx-influxproxy.loca
 If you dont have NGINX installed you can watch any guide or read this article
 ` https://www.supereasy.com/how-to-configure-nginx-as-a-https-reverse-proxy-easily/ `
 
-With all this setup and installed you now have linux instace with running dockers for InfluxDB, Grafana, Telegraf, you have NGINX web server with SSL proxy to forward 8087 to 8086 , and your router/network is setup so your device is visible outside on ports needed. 
+With all this setup and installed you now have linux instace with running dockers for InfluxDB, Grafana, Telegraf, you have NGINX web server with SSL proxy to forward 8087 to 8086 , and your router/network is setup so your device is visible outside on ports needed.  
+
+## Now the fun part - Setting up the Homekit. 
+
+I suggest to create a file `(my example: homekit.conf)` where you will place your connection string to Influx
+` https://FQDN:8087/write?db=Homekit&u=user&p=password  NOTE: db=Homekit is the name of the database we created in Influx`
+
+and you will create a structure how the data coming from Homekit want to looks like. 
+
+My approach is the following based on InfluxDB capabilities
+```
+Homekit,room=bathroom,device=DoorSensor state="Open"
+Measurement,room tag,device tag  Value
+Homekit,room=bathroom,device=Light,name=Led status=1
+Measurement,room tag,device tag,name tag Value
+```
+Measurement is the same as Table name in MS SQL for example, TAGs are columns, and Value is the column again which contains the value for this tags (boolean, float, string)
