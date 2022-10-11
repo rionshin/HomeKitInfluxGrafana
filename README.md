@@ -128,3 +128,15 @@ You can use combination of this and it is important to note that for Timers ther
 * using EVE app timer (which i dont  like)
 * use Homebridge plugin as Homebridge-Sheduler or homebridge-dummyswitch. I use Sscheduler and create few different switches which turn on/off on every 2,3,5min and i use them as event trigger for writing to influx.
 * The homebridge plugin: ` https://github.com/kbrashears5/typescript-homebridge-schedule#readme `
+
+## Lest go to Home app and create data collection for temperature and humidity sensors 
+
+Open home app , new automation and select how automation will be triggered : 
+* in my scenario i am using DummySwitch and event is when Switch is ON 
+* then you need to select accessorie to control but you scroll down and select convert to shortcut  
+* in shortcut view you will use few main elements: 
+```
+* 1
+* 2 
+* 3
+```
