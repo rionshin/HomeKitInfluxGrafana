@@ -1,0 +1,40 @@
+server {
+  
+
+  # https://
+  listen 8087 ssl http2;       # https IPv4
+ 
+
+  
+  server_name _; # replace with your domain
+
+   
+  ssl_certificate /etc/nginx/ssl/iago/your.crtbundle.crt;   #your certificate bundle 
+  ssl_certificate_key /etc/nginx/ssl/iago/your.crt.private.key; # replace with path to your key 
+
+  ssl_session_cache           builtin:1000  shared:SSL:10m;
+  ssl_protocols               TLSv1.2 TLSv1.3;
+  ssl_ciphers                 HIGH:!aNULL:!MD5;
+  ssl_prefer_server_ciphers   on;
+  # ssl_stapling                on;
+  # ssl_stapling_verify         on;
+
+  # large upload size to allow for uploading 3rd party backup files
+  client_max_body_size 2G;
+
+  error_page 502 /custom_502.html;
+
+  location /startup-status.json {
+    alias /usr/share/nginx/html/status.json;
+  }
+  #SSL proxy listening on 8087 and sending it to InfluxDB api on 8086
+location / {
+        proxy_pass http://localhost:8086; #your IP where is INFLUXDB install 
+
+        proxy_set_header        Host $host;
+        proxy_set_header        X-Real-IP $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header        X-Forwarded-Proto $scheme;
+}
+
+#this should be located at /etc/nginx/sites-enabled 
