@@ -70,4 +70,4 @@ and then edit the config and add following lines on the bottom:
 
   auth-enabled = true
 ```
-Going forward when you connect to your influxdb via console the command will be: influx -username USER -password PASS
+Going forward when you connect to your influxdb via console the command will be: `influx -username USER -password PASS`
