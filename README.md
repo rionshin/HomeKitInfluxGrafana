@@ -150,5 +150,13 @@ Homekit,room=bedroom,device=TempSensor temperature=...
 Homekit,room=bedroom,device=TempSensor humidity=...
 Homekit,room=bathroom,device=TempSensor temperature=...
 Homekit,room=bathroom,device=TempSensor humidity=...
-Last option on combine must be select NEW LINES  - This will make all combined text each on new line. 
+Last option on combine must be select NEW LINES: all combined text each on new line. 
 ```
+* now we need to prepare to send - place GET Content of URL and on URL place the influxDB url we prepared in homekit.conf 
+`https://FQDN:8087/write?db=Homekit&u=user&p=password`
+
+` Select POST method`
+
+` Select request body - File`
+
+`and for file select the Variable for Combined text`
