@@ -161,7 +161,7 @@ Last option on combine must be select NEW LINES: all combined text each on new l
 
 `and for file select the Variable for Combined text`
 
-## You can find a video of the setup to easily understand it. 
+### You can find a video of the setup to easily understand it. : ShortcutSetupHomekit.mp4 in the repo
 
 
 # To be continued.... 
