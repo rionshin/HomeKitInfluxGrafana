@@ -10,6 +10,7 @@ You need a linux machine(VM, raspberry pi,etc), SSL certificate (not self signed
 Install Docker and Portainer ,  you can watch this amazing guide https://www.youtube.com/watch?v=kykvC2cGlNQ&t=0s  and I use part of his scripts to easy install what I need. 
 
 Go to http://IP:9000 to connect to Portainer and seyup your user/pass on 1st login. 
+
 Install docker compose: 
 ``` 
 sudo apt-get update
@@ -28,9 +29,9 @@ For some strange reason when I created the dockers, users and password was not e
 
 Open portainer , select the InfluxDB container and go to console and run : 
 $ influx 
-
+```
 CREATE USER username WITH PASSWORD 'password' WITH ALL PRIVILEGES  
-
+```
 Check DB or create new with:
 ```
 show databases
@@ -53,7 +54,7 @@ root@ :/# cd /etc/influxdb/
 root@ :/etc/influxdb# nano influxdb.conf   
 
 and then edit the config and add following lines on the bottom:
-
+```
 [http]
 
   enabled = true
@@ -61,5 +62,5 @@ and then edit the config and add following lines on the bottom:
   bind-address = ":8086"
 
   auth-enabled = true
-
+```
 Going forward when you connect to your influxdb via console the command will be: influx -username USER -password PASS
