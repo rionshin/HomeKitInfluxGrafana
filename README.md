@@ -118,3 +118,11 @@ if the column is created as float - you inserted a number then you cannot insert
 
 It is really important to keep attention on the synthax you dont have spaces between tags, and you have space and no `,` before Value. 
 When you entering digits/boolean no need to put `" "` , you must use `" "` for string values. 
+
+Now when you have your strategy for data formating we need to decide what data will consumer and how/when , and I come with following:
+* for all temperature sensors, thermostats and slow changing states I use Timer on every 5min to trigger collection of data and send it to InfluxAPI
+* for all lights and switches as I dont really care for exact time when I turn it on, I use again time that collect light and switch statuses every 2 min. 
+* for all security sensors as door contacts, motion sensors, gas detectors , smoke detectors I use when device is triggered even to write to influxdb
+You can use combination of this and it is important to note that for Timers there are 2 options:
+* using EVE app timer (which i dont  like)
+* use Homebridge plugin as Homebridge-Sheduler or homebridge-dummyswitch. I use Sscheduler and create few different switches which turn on/off on every 2,3,5min and i use them as event trigger for writing to influx. 
