@@ -160,3 +160,9 @@ Last option on combine must be select NEW LINES: all combined text each on new l
 ` Select request body - File`
 
 `and for file select the Variable for Combined text`
+
+## You can find a video of the setup to easily understand it. 
+
+
+# To be continued.... 
+
