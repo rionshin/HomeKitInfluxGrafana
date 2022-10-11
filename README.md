@@ -3,9 +3,9 @@ Homekit data ingestion in InfluxDB and visualisation in Grafana
 
 How to setup InfluxDB, grafana and Homekit .
 
-Prerequisites: 
+##Prerequisites: 
 
-You need a linux machine(VM, raspberry pi,etc), SSL certificate (not self signed)
+###You need a linux machine(VM, raspberry pi,etc), SSL certificate (not self signed)
 
 Install Docker and Portainer ,  you can watch this amazing guide https://www.youtube.com/watch?v=kykvC2cGlNQ&t=0s  and I use part of his scripts to easy install what I need. 
 
@@ -47,7 +47,7 @@ Create database NAME
 ```
 *More info here: https://docs.influxdata.com/influxdb/v1.8/administration/authentication_and_authorization/#user-management-commands 
 * Then you need to change your config file to have Auth Enabled. This can be done again in portainer console.  
-* You need to install VI or NANO (`**sudo apt update** and then **sudo apt install nano**`).
+* You need to install VI or NANO (`sudo apt update and then sudo apt install nano`).
 ```
 Open config file located in /etc/influxdb/
 root@ :/# cd /etc/influxdb/
