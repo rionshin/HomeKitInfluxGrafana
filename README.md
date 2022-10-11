@@ -41,16 +41,18 @@ CREATE USER username WITH PASSWORD 'password' WITH ALL PRIVILEGES
 ```
 Check DB or create new with:
 ```
-show databases
+command : show databases
+result: 
 name: databases
 name
 internal
 Homekit
-show users
+command: show users
+results:
 user    admin
 admin   true
 homekit true
-Create database NAME 
+command: Create database NAME 
 ```
 * More info here: https://docs.influxdata.com/influxdb/v1.8/administration/authentication_and_authorization/#user-management-commands 
 * Then you need to change your config file to have Auth Enabled. This can be done again in portainer console.  
