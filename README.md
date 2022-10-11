@@ -8,7 +8,10 @@ Homekit data ingestion in InfluxDB and visualisation in Grafana
 ###  You need a linux machine(VM, raspberry pi,etc), SSL certificate (not self signed)
 
 Install Docker and Portainer ,  you can watch this amazing guide https://www.youtube.com/watch?v=kykvC2cGlNQ&t=0s  and you can use part of his scripts to easy install what you need.
+
 Connect to SSH to your linux machine and run : 
+
+
 `curl -sk https://raw.githubusercontent.com/rionshin/HomeKitInfluxGrafana/main/InstallDocker_Portainer | sudo bash - `
 
 Go to http://IP:9000 to connect to Portainer and seyup your user/pass on 1st login. 
