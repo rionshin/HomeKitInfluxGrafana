@@ -96,4 +96,4 @@ The config file is located in the repository named as : ` nginx-influxproxy.loca
 If you dont have NGINX installed you can watch any guide or read this article
 ` https://www.supereasy.com/how-to-configure-nginx-as-a-https-reverse-proxy-easily/ `
 
-With all this setup and installed you now have linux 
+With all this setup and installed you now have linux instace with running dockers for InfluxDB, Grafana, Telegraf, you have NGINX web server with SSL proxy to forward 8087 to 8086 , and your router/network is setup so your device is visible outside on ports needed. 
