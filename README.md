@@ -217,5 +217,11 @@ and
 
 * Check example in influxConse.png
 
+You can easily check your fields and their format by using `show field keys`  or tags `show tag keys`
+
+* Check the InfluxDB guide and DB Schema https://docs.influxdata.com/influxdb/v1.8/query_language/explore-schema/ 
+
+
+
 # To be continued.... 
 
