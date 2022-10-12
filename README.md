@@ -189,11 +189,16 @@ Homekit,room=livingroom,device=Light,name=wardrobe status=
 * Write statement may give you error if you push text in float field, but as we use mostly Round and Get number it always convert it. 
 * I would recomend when you select your variable also to select format Number. 
 
+### Logging Security event 
+
 ## Validation 
 
-* When you create shortcut always use Play button to test it and check your logs in Portainer for Influxdb - if you see code 400 something is wrong, you can use CURL to execute same comand in command promt to see what will happen. POST example with CURL 
-` curl -i -XPOST 'http://ip:8087/write?db=DBNAME&u=UserName&p=Password' --data-binary  'Homekit,room=bathroom occupancy=1'
-Thats the expected outcome with code 204 
+* When you create shortcut always use Play button to test it and check your logs in Portainer for Influxdb - if you see code 400 something is wrong, you can use CURL to execute same comand in command promt to see what will happen. POST example with CURL :
+
+` curl -i -XPOST 'http://ip:8087/write?db=DBNAME&u=UserName&p=Password' --data-binary  'Homekit,room=bathroom occupancy=1' `
+
+This is  the expected outcome with code 204 
+
 ```
 HTTP/1.1 204 No Content
 Content-Type: application/json
