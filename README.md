@@ -198,13 +198,14 @@ Homekit,room=livingroom,device=Light,name=wardrobe status=
 
 For example: 
 ` On Door Open Create Shortcut and Combine text with: Homekit,room=kitchen,device=DoorSensor state="Open" ` 
-Then  `Get Content of URL and POST the Combined text`
-* Check DoorSensors.png to get the idea of automations needed. 
 
-* Please note for Door Sensors you need to have 2 automations one for open and one for closed. 
+Then 
+ `Get Content of URL and POST the Combined text`
+
+* Please note for Door Sensors you need to have 2 automations one for open and one for closed : DoorSensors.png  . 
 * Same logic applies for Motion Sensors, as many of us have automations on detect motion and stop detecting motion you can add the Combine and POST on the botton of the shortcut - check `movementsensor.png` 
 * for motion sensor I recomend this amazing guide which I use to stop my lights on stop detecting motion: 
-`https://homekitautomationtips.com/how-to-use-a-motion-sensor-to-turn-your-lights-off-with-homekit-but-giving-you-a-warning-first-more-advanced-version/ `
+https://homekitautomationtips.com/how-to-use-a-motion-sensor-to-turn-your-lights-off-with-homekit-but-giving-you-a-warning-first-more-advanced-version/ 
 
 ## Validation 
 
