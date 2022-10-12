@@ -56,8 +56,10 @@ results:
 user    admin
 admin   true
 homekit true
-command: Create database NAME 
+command: CREATE DATABASE "DN-NAME" WITH DURATION 1000d REPLICATION 1 
+Duration is really important as this is the duration data will be kept before InfluxDB delete it. 
 ```
+* More info on DB creation and management here : https://docs.influxdata.com/influxdb/v1.8/query_language/manage-database/#create-database 
 * More info here: https://docs.influxdata.com/influxdb/v1.8/administration/authentication_and_authorization/#user-management-commands 
 * Then you need to change your config file to have Auth Enabled. This can be done again in portainer console.  
 * You need to install VI or NANO (`sudo apt update and then sudo apt install nano`).
@@ -207,7 +209,9 @@ Then
 * for motion sensor I recomend this amazing guide which I use to stop my lights on stop detecting motion: 
 https://homekitautomationtips.com/how-to-use-a-motion-sensor-to-turn-your-lights-off-with-homekit-but-giving-you-a-warning-first-more-advanced-version/ 
 
-## Validation 
+### You can use any of the approaches above to log your data or combine it, you will need write more shortcuts.  Its up to you to decide what will be your strategy. 
+
+## Shortcut and Data Validation 
 
 * When you create shortcut always use Play button to test it and check your logs in Portainer for Influxdb - if you see code 400 something is wrong, you can use CURL to execute same comand in command promt to see what will happen. POST example with CURL :
 
@@ -241,6 +245,9 @@ and
 You can easily check your fields and their format by using `show field keys`  or tags `show tag keys`
 
 * Check the InfluxDB guide and DB Schema https://docs.influxdata.com/influxdb/v1.8/query_language/explore-schema/ 
+
+
+# Grafana! 
 
 
 
