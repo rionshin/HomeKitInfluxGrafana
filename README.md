@@ -204,13 +204,18 @@ X-Request-Id: da689211-49fd-11ed-a344-0242ac180002
 Date: Wed, 12 Oct 2022 07:16:56 GMT
 ```
 * You can also have open console to InfluxDB - Portainer --> InfluxDB -> Console and connect with
+
 `influx -username USERNAME -password PASSWORD`
+
 Then 
+
 `use DBNAME`
+
 and
+
 `select * from Homekit` `NOTE: DB name is case sensitive`
 
-Check example in influxConse.png
+* Check example in influxConse.png
 
 # To be continued.... 
 
