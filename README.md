@@ -150,7 +150,7 @@ Homekit,room=bedroom,device=TempSensor temperature=...
 Homekit,room=bedroom,device=TempSensor humidity=...
 Homekit,room=bathroom,device=TempSensor temperature=...
 Homekit,room=bathroom,device=TempSensor humidity=...
-Last option on combine must be select NEW LINES: all combined text each on new line. 
+Last option on combine must be selected: NEW LINES : all combined text -  each on new line. 
 ```
 * now we need to prepare to send - place GET Content of URL and on URL place the influxDB url we prepared in homekit.conf 
 `https://FQDN:8087/write?db=Homekit&u=user&p=password`
@@ -161,12 +161,17 @@ Last option on combine must be select NEW LINES: all combined text each on new l
 
 `and for file select the Variable for Combined text`
 
-* execute the shortcit and check your Influxlogs in Portainer - InfluxDB - Logs. They should looks like with code 204 any other code is error: 
+* execute the shortcit and check your Influxlogs in Portainer - InfluxDB - Logs. They should looks like code below, code 204 mean POST was ok,  any other code is error: 
 
 ` [httpd] 192.168.1.1,192.168.1.44 - homekit [11/Oct/2022:15:26:28 +0000] "POST /write?db=Homekit&p=%5BREDACTED%5D&u=homekit HTTP/1.0" 204 0 "-" "BackgroundShortcutRunner/1184.1 CFNetwork/1391.3 Darwin/22.0.0" 13c3524c-4979-11ed-9ce4-0242ac180002 4670 `
 
 ### You can find a video of the setup to easily understand it. : ShortcutSetupHomekit.mp4 in the repo
 
+We can use the same approach to log Lights and Switches statuses. 
+
+The trick here is that Get content of Device - Power state - may return different values, Some devices return 1/0, some Yes/No. 
+And Homekit shortcut is not clever enough to set it all as boolean so you need to decide on approach: 
+* Do you want to convert it to 1/0 or Yes/No => I selected to use 1/0
 
 # To be continued.... 
 
