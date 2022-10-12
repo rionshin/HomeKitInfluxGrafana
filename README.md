@@ -191,6 +191,18 @@ Homekit,room=livingroom,device=Light,name=wardrobe status=
 
 ### Logging Security event 
 
+* if you already have automation based on security events you can edit it and add on the bottom of the shortcut: 
+* structure it with Combine text - its mandatory to use Combine Text so you can expose it in POST command
+`You dont need to get status of the device as you already know it and can hardcode it` 
+* GET content of URL and send the data to InfluxDB
+
+For example: 
+` On Door Open Create Shortcut and Combine text with: Homekit,room=kitchen,device=DoorSensor state="Open" ` 
+Then  `Get Content of URL and POST the Combined text`
+
+* Please note for Door Sensors you need to have 2 automations one for open and one for closed. 
+* Same logic applies for Motion Sensors, as many of us have automations on detect motion and stop detecting motion you can add the Combine and POST on the botton of the shortcut - check `movementsensor.png` 
+
 ## Validation 
 
 * When you create shortcut always use Play button to test it and check your logs in Portainer for Influxdb - if you see code 400 something is wrong, you can use CURL to execute same comand in command promt to see what will happen. POST example with CURL :
