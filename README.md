@@ -1,7 +1,7 @@
 # HomeKit data to InfluxDB visualized in Grafana
 Homekit data ingestion in InfluxDB and visualisation in Grafana
 
-# How to setup InfluxDB, grafana and Homekit .
+# How to setup InfluxDB, Grafana and Homekit .
 
 ### Prerequisites: 
 
@@ -172,13 +172,22 @@ Last option on combine must be selected: NEW LINES : all combined text -  each o
 The trick here is that Get content of Device - Power state - may return different values, Some devices return 1/0, some Yes/No. 
 And Homekit shortcut is not clever enough to set it all as boolean so you need to decide on approach: 
 * Do you want to convert it to 1/0 or Yes/No => I selected to use 1/0
-* you can check the SitchState.png - using if statement to check is On and replace it with 1, otherwise replace with 0. 
+* you can check the SwitchState.png - using if statement to check is On and replace it with 1, otherwise replace with 0. 
+* Same logic as above for some lights which return Yes/No
+* You can check what your accessory return by open Shortcut app, select personal Shortcut and then create simple shortcut with Get Status of the accessory and run it. 
 * for Switch and Lights I added one more tag Name 
 ```
 Homekit,room=livingroom,device=Switch,name=TV status=
 Homekit,room=livingroom,device=Light,name=wardrobe status=
 ```
+### Tricks for some sensors as Light 
 
+* Light sensor return measure in format Number lx , so when you get it you need to isolate only the number 
+`check LightSensor.png`
+* Use "Get Number from" - this will provide you number value you can use to send to InfluxDB. 
+* if you dont know what your sensor return always check it, homekit will not give you an error if output for example is Text and you use Round or Get number, it will just return 0. 
+* Write statement may give you error if you push text in float field, but as we use mostly Round and Get number it always convert it. 
+* I would recomend when you select your variable also to select format Number. 
 
 # To be continued.... 
 
