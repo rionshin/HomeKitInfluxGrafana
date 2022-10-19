@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    restart: always
+    volumes:
+      - .:/mosquitto
+    ports:
+      - 1884:1884
+networks:
+  default:
+    name: influx_default
+    external: true
