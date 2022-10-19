@@ -1,0 +1,9 @@
+version: '3.6'
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    volumes:
+      - ./mosquitto:/mosquitto
+    ports:
+      - 1884:1884
