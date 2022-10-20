@@ -7,7 +7,7 @@ Homekit data ingestion in InfluxDB and visualisation in Grafana
 
 ###  You need a linux machine(VM, raspberry pi,etc), SSL certificate (not self signed)
 
-I have homebridge image installed on Raspberry PI4, you can install stardart debian, or rasbian, you need linux instace :)  
+I have homebridge image installed on Raspberry PI4, you can install stardart debian, or rasbian, you should be able to install docker :)  
 
 ## Lets START: 
 
