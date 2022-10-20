@@ -1,5 +1,5 @@
 #!/bin/bash
-#You can watch https://www.youtube.com/watch?v=kykvC2cGlNQ&t=0s for more details and his amazing tutorial 
+#You  can watch https://www.youtube.com/watch?v=kykvC2cGlNQ&t=0s for more details and his amazing tutorial 
 #run it as: curl -sk https://raw.githubusercontent.com/rionshin/HomeKitInfluxGrafana/main/InstallDocker_Portainer | sudo bash -
  
 echo " "

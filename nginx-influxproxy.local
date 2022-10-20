@@ -37,4 +37,4 @@ location / {
         proxy_set_header        X-Forwarded-Proto $scheme;
 }
 
-#this should be located at /etc/nginx/sites-enabled 
+#this  should be located at /etc/nginx/sites-enabled 
