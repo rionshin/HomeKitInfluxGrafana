@@ -186,6 +186,9 @@ And Homekit shortcut is not clever enough to set it all as boolean so you need t
 Homekit,room=livingroom,device=Switch,name=TV status=
 Homekit,room=livingroom,device=Light,name=wardrobe status=
 ```
+
+![Alt text](./switchState.png)
+
 ### Tricks for some sensors as Light 
 
 * Light sensor return measure in format Number lx , so when you get it you need to isolate only the number 
@@ -194,6 +197,8 @@ Homekit,room=livingroom,device=Light,name=wardrobe status=
 * if you dont know what your sensor return always check it, homekit will not give you an error if output for example is Text and you use Round or Get number, it will just return 0. 
 * Write statement may give you error if you push text in float field, but as we use mostly Round and Get number it always convert it. 
 * I would recomend when you select your variable also to select format Number. 
+
+![Alt text](./lightSensor.png)
 
 ### Logging Security event 
 
@@ -208,10 +213,13 @@ For example:
 Then 
  `Get Content of URL and POST the Combined text`
 
+
 * Please note for Door Sensors you need to have 2 automations one for open and one for closed : DoorSensors.png  . 
 * Same logic applies for Motion Sensors, as many of us have automations on detect motion and stop detecting motion you can add the Combine and POST on the botton of the shortcut - check `movementsensor.png` 
 * for motion sensor I recomend this amazing guide which I use to stop my lights on stop detecting motion: 
 https://homekitautomationtips.com/how-to-use-a-motion-sensor-to-turn-your-lights-off-with-homekit-but-giving-you-a-warning-first-more-advanced-version/ 
+
+![Alt text](./movementSensor.png)
 
 ### You can use any of the approaches above to log your data or combine it, you will need write more shortcuts.  Its up to you to decide what will be your strategy. 
 
@@ -258,10 +266,15 @@ You can easily check your fields and their format by using `show field keys`  or
 
 
 
-Now when we have all the data in Influx we can start using Grafana. 
+Now when we have all the data in Influx we can start using Grafana.  This is how my dashboard looks like. 
 
 ![Alt text](./grafana_view_new.png)
  
+
+ One of the tricks is to use regex to rename your sensor data if needed and that can be done by rename by regex in Transofrm section of your query: 
+
+![Alt text](./s_regex_grafana.png)
+
 
 # To be continued.... 
  
