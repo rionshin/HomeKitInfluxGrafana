@@ -172,6 +172,12 @@ Last option on combine must be selected: NEW LINES : all combined text -  each o
 * You can find a video of the setup to easily understand it. : ShortcutSetupHomekit.mp4 in the repo
 
 
+
+https://user-images.githubusercontent.com/41396180/201077182-dc00217b-a388-4ab8-a399-b6ea859627a5.mov
+
+
+
+
 ## We can use the same approach to log Lights and Switches statuses. 
 
 The trick here is that Get content of Device - Power state - may return different values, Some devices return 1/0, some Yes/No. 
