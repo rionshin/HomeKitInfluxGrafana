@@ -171,7 +171,8 @@ Last option on combine must be selected: NEW LINES : all combined text -  each o
 
 * You can find a video of the setup to easily understand it. : ShortcutSetupHomekit.mp4 in the repo
 
-<video src="https://github.com/rionshin/HomeKitInfluxGrafana/blob/2d77c33e598ddb6a99437ed8d63a4214bf539b60/ShortcutSetupHomekit.mp4 " controls="controls" style="max-width: 730px;"></video>
+<video src="https://github.com/rionshin/HomeKitInfluxGrafana/blob/2d77c33e598ddb6a99437ed8d63a4214bf539b60/ShortcutSetupHomekit.mp4" controls="controls">
+</video>
 
 
 ## We can use the same approach to log Lights and Switches statuses. 
