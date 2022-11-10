@@ -163,11 +163,15 @@ Last option on combine must be selected: NEW LINES : all combined text -  each o
 
 `and for file select the Variable for Combined text`
 
-* execute the shortcit and check your Influxlogs in Portainer - InfluxDB - Logs. They should looks like code below, code 204 mean POST was ok,  any other code is error: 
+* execute the shortcut and check your Influxlogs in Portainer - InfluxDB - Logs. They should looks like code below, code 204 mean POST was ok,  any other code is error: 
 
 ` [httpd] 192.168.1.1,192.168.1.44 - homekit [11/Oct/2022:15:26:28 +0000] "POST /write?db=Homekit&p=%5BREDACTED%5D&u=homekit HTTP/1.0" 204 0 "-" "BackgroundShortcutRunner/1184.1 CFNetwork/1391.3 Darwin/22.0.0" 13c3524c-4979-11ed-9ce4-0242ac180002 4670 `
 
+![Alt text](./portainerLogs.png)
+
 * You can find a video of the setup to easily understand it. : ShortcutSetupHomekit.mp4 in the repo
+
+
 
 ## We can use the same approach to log Lights and Switches statuses. 
 
@@ -240,7 +244,10 @@ and
 
 `select * from Homekit` `NOTE: DB name is case sensitive`
 
-* Check example in influxConse.png
+Check the example: 
+
+![Alt text](./influxConsole.png)
+
 
 You can easily check your fields and their format by using `show field keys`  or tags `show tag keys`
 
