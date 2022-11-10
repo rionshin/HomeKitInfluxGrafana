@@ -249,8 +249,10 @@ You can easily check your fields and their format by using `show field keys`  or
 
 # Grafana! 
 
+![Alt text][def]
+<img src="./grafana_view.png>
 
-
+Now when we have all the data in Influx we can start using Grafana. 
 
 # To be continued.... 
-
+ 
