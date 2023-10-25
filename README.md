@@ -277,6 +277,7 @@ Now when we have all the data in Influx we can start using Grafana.  This is how
  
 
  One of the tricks is to use regex to rename your sensor data if needed and that can be done by rename by regex in Transofrm section of your query: 
+ Example of regex that I am using ^.*Device: ([A-Za-z]*[0-9])} ^.*room: ([A-Za-z]*[0-9])}
 
 ![Alt text](./s_regex_grafana.png)
 
