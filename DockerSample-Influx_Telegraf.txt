@@ -1,0 +1,31 @@
+#Latest Influx with conf and data mapped to Host folders
+
+docker run -d  name InfluxDB -p 8086:8086 \
+      -v $PWD/data:/var/lib/influxdb2 \
+      -v $PWD/config:/etc/influxdb2 \
+      -e DOCKER_INFLUXDB_INIT_MODE=setup \
+      -e DOCKER_INFLUXDB_INIT_USERNAME=admin \
+      -e DOCKER_INFLUXDB_INIT_PASSWORD=****** \
+      -e DOCKER_INFLUXDB_INIT_ORG=***** \
+      -e DOCKER_INFLUXDB_INIT_BUCKET=***** \
+      influxdb:2.7.4
+
+#Docker to run Telegraf instance for MQTT Data
+
+
+docker run -d --name=telegrafZigbee \
+	-v $PWD/mqtt/telegraf.conf:/etc/telegraf/telegraf.conf:ro \
+	telegraf:latest
+
+#DOcker to run telegraf instance for PC CPU/DISK/ Data
+
+docker run -d --name=telegrafPC  \
+	-v $PWD/telegraf.conf:/etc/telegraf/telegraf.conf:ro \
+	-v /:/hostfs:ro \
+	-e HOST_ETC=/hostfs/etc \
+	-e HOST_PROC=/hostfs/proc \
+	-e HOST_SYS=/hostfs/sys \
+	-e HOST_VAR=/hostfs/var \
+	-e HOST_RUN=/hostfs/run \
+	-e HOST_MOUNT_PREFIX=/hostfs \
+	telegraf
