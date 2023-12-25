@@ -3,7 +3,7 @@ map $http_upgrade $connection_upgrade {
   '' close;
 }
 upstream grafana {
-  server 192.168.1.44:3000;
+  server 192.168.*.*:3000;
 }
 
 server {
