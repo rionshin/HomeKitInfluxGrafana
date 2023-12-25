@@ -23,7 +23,7 @@ server {
 
 
 location / {
-        proxy_pass http://192.168.1.68:8086;
+        proxy_pass http://192.168.*.*:8086;
 
         proxy_set_header        Host $host;
         proxy_set_header        X-Real-IP $remote_addr;
