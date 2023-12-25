@@ -1,0 +1,31 @@
+server {
+   listen 80;
+   server_name portainer.alofis.pet;
+   return 301 https://portainer.alofis.pet$request_uri;
+ }
+
+server {
+   listen 443 ssl http2;
+   server_name portainer.alofis.pet;
+   ssl_certificate  /etc/letsencrypt/live/portainer.alofis.pet/fullchain.pem;
+   ssl_certificate_key  /etc/letsencrypt/live/portainer.alofis.pet/privkey.pem; 
+   ssl_prefer_server_ciphers on;
+   ssl_session_cache           builtin:1000  shared:SSL:10m;
+   ssl_protocols               TLSv1.2 TLSv1.3;
+   ssl_ciphers                 HIGH:!aNULL:!MD5;
+
+  error_page 502 /custom_502.html;
+  location = /custom_502.html {
+    root /usr/share/nginx/html;
+    internal;
+  }
+
+   location / {
+        proxy_pass http://192.168.1.68:9000;
+
+        proxy_set_header        Host $host;
+        proxy_set_header        X-Real-IP $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header        X-Forwarded-Proto $scheme;
+   }
+}

@@ -32,6 +32,10 @@ go to the folder you created and run:
 
 This will create dockers for  Telegraf, Grafana and InfluxDB - please note as I am using 32 image of rasbian os I installed influxDB v1.8 and not 2.0+
 
+I upgraded recently to PI5 so I start running also  InfluxDB v2.7.4, also i wanted few telegraf instanced to write the data in different Databases/Buckets, so i created few telegraf docker images to run PC data as CPU, Disk , etc, and another one to run my Zigbee2MQTT data - you can find the example config in /TelegrafConf/ 
+
+Additionally i added examples of the docker commands as Telegraf needs access to the CPU and DISK and need to map HOST to the container, I also included and InfluxDV v2.7.4 Docker Run for easy setup - you can find it DockerSample-Influx_Telegraf.txt  
+
 If you need guide how to easily install InfluxDB v2+ you can check this guide: https://www.youtube.com/watch?v=QGG_76OmRnA   
 
 You can verify the docker is up, by opening your Portainer and checking the new docker containers or runnning  ` docker container ps `
@@ -87,11 +91,17 @@ Going forward when you connect to your influxdb via console the command will be:
 Configure your DNS A record to map to your IP where your machine is located, 
 you can map it to your router IP and then portforwarding to your internal machine with Influx, etc. 
 
-Go and get SSL certificate , it is really cheap - around 10$ per year. 
+Go and get SSL certificate , it is really cheap - around 10$ per year or use LetsEncrypt - 
 
 You can setup the SSL to your Influx instance, however as i already have NGINX installed I created proxy in NGINX that forward   port 8087 with enabled SSL to   8086 where is influx instance with no ssl. 
 
 The config file is located in the repository named as : ` nginx-influxproxy.local `
+
+### I will add soon(tm) guide for easy use of Lets Encrypt
+
+### I add  my config for the NGINX APP Proxies 
+I recently decide to move to new architecture - having my PI5 as gateway and proxy for all services I have at home - This way I will have only one device exposed to internet with 443 Open , nginx creates app proxies that servers all my services as Grafana, Influx, Portainer  - you can see my nginx config in /sites-enabled. 
+* Its important to notice that Grafana proxy conf is a bit specific. And it is mandatory to edit your grafana.ini to have as host the hostname exposed to internet - grafana.yoursite.com 
 
 ### Please dont forget to create port mapping on your router for all ports you are using as they need to be reachable from outside. 
 

@@ -1,0 +1,42 @@
+map $http_upgrade $connection_upgrade {
+  default upgrade;
+  '' close;
+}
+upstream grafana {
+  server 192.168.1.44:3000;
+}
+
+server {
+   listen 80;
+   server_name grafana.alofis.pet;
+   return 301 https://grafana.alofis.pet$request_uri;
+}
+
+server {
+  listen 443 ssl http2;
+  server_name grafana.alofis.pet; 
+
+  ssl_certificate  /etc/letsencrypt/live/grafana.alofis.pet/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/grafana.alofis.pet/privkey.pem;  
+
+  ssl_session_cache           builtin:1000  shared:SSL:10m;
+  ssl_protocols               TLSv1.2 TLSv1.3;
+  ssl_ciphers                 ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+  ssl_prefer_server_ciphers   on;
+  root /usr/share/nginx/html;
+  index index.html index.htm;
+
+  location / {
+    proxy_set_header Host $http_host;
+    proxy_pass http://grafana;
+  }
+
+  location /api/live/ {
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_set_header Host $http_host;
+    proxy_pass http://grafana;
+  }
+
+}
