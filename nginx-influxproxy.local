@@ -9,8 +9,8 @@ server {
   server_name _; # replace with your domain
 
    
-  ssl_certificate /etc/nginx/ssl/iago/your.crtbundle.crt;   #your certificate bundle 
-  ssl_certificate_key /etc/nginx/ssl/iago/your.crt.private.key; # replace with path to your key 
+  ssl_certificate /etc/nginx/ssl/your.crtbundle.crt;   #your certificate bundle 
+  ssl_certificate_key /etc/nginx/ssl/your.crt.private.key; # replace with path to your key 
 
   ssl_session_cache           builtin:1000  shared:SSL:10m;
   ssl_protocols               TLSv1.2 TLSv1.3;
