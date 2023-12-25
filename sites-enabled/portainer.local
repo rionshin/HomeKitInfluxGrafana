@@ -1,3 +1,8 @@
+  GNU nano 7.2                                                                                                                  portainer.local                                                                                                                            
+upstream portainer {
+    server 192.168.*.*:9443;
+}
+
 server {
    listen 80;
    server_name portainer.alofis.pet;
@@ -7,8 +12,8 @@ server {
 server {
    listen 443 ssl http2;
    server_name portainer.alofis.pet;
-   ssl_certificate  /etc/letsencrypt/live/portainer.alofis.pet/fullchain.pem;
-   ssl_certificate_key  /etc/letsencrypt/live/portainer.alofis.pet/privkey.pem; 
+   ssl_certificate  /etc/letsencrypt/live/*******/fullchain.pem;
+   ssl_certificate_key  /etc/letsencrypt/live/*****/privkey.pem;
    ssl_prefer_server_ciphers on;
    ssl_session_cache           builtin:1000  shared:SSL:10m;
    ssl_protocols               TLSv1.2 TLSv1.3;
@@ -21,11 +26,10 @@ server {
   }
 
    location / {
-        proxy_pass http://192.168.*.*:9000;
-
-        proxy_set_header        Host $host;
-        proxy_set_header        X-Real-IP $remote_addr;
-        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header        X-Forwarded-Proto $scheme;
+       proxy_pass https://portainer/;
+       proxy_http_version 1.1;
+       proxy_set_header Upgrade $http_upgrade;
+       proxy_set_header Connection "Upgrade";
+       proxy_set_header Host $host;
    }
 }

@@ -29,3 +29,15 @@ docker run -d --name=telegrafPC  \
 	-e HOST_RUN=/hostfs/run \
 	-e HOST_MOUNT_PREFIX=/hostfs \
 	telegraf
+
+#Portainer with SSL from Lets Encrypt 
+
+docker run -d -p 9443:9443 -p 8000:8000 -p 9000:9000 \
+    --name portainer --restart always \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v portainer_data:/data \
+    -v /etc/letsencrypt/live/alofis.pet:/certs/live/alofis.pet:ro \
+    -v /etc/letsencrypt/archive/alofis.pet:/certs/archive/alofis.pet:ro \
+    portainer/portainer-ce:latest \
+    --sslcert /certs/live/alofis.pet/fullchain.pem \
+    --sslkey /certs/live/alofis.pet/privkey.pem
