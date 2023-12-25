@@ -284,7 +284,9 @@ You can easily check your fields and their format by using `show field keys`  or
 Now when we have all the data in Influx we can start using Grafana.  This is how my dashboard looks like. 
 
 ![Alt text](./grafana_view_new.png)
- 
+
+ <img width="2007" alt="newDashboardScreenshot" src="https://github.com/rionshin/HomeKitInfluxGrafana/assets/41396180/5edbf0ba-34a2-4fa3-a1c2-043784273455">
+
 
  One of the tricks is to use regex to rename your sensor data if needed and that can be done by rename by regex in Transofrm section of your query: 
  Example of regex that I am using ^.*Device: ([A-Za-z]*[0-9])} ^.*room: ([A-Za-z]*[0-9])}
