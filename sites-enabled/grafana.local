@@ -8,16 +8,16 @@ upstream grafana {
 
 server {
    listen 80;
-   server_name grafana.alofis.pet;
-   return 301 https://grafana.alofis.pet$request_uri;
+   server_name grafana.yourhost.net;
+   return 301 https://grafana.yourhost.net$request_uri;
 }
 
 server {
   listen 443 ssl http2;
-  server_name grafana.alofis.pet; 
+  server_name grafana.yourhost.net; 
 
-  ssl_certificate  /etc/letsencrypt/live/grafana.alofis.pet/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/grafana.alofis.pet/privkey.pem;  
+  ssl_certificate  /etc/letsencrypt/live/grafana.yourhost.net/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/grafana.yourhost.net/privkey.pem;  
 
   ssl_session_cache           builtin:1000  shared:SSL:10m;
   ssl_protocols               TLSv1.2 TLSv1.3;

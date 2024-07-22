@@ -8,16 +8,16 @@ upstream reporting {
 
 server {
    listen 80;
-   server_name reporting.alofis.pet;
-   return 301 https://reporting.alofis.pet$request_uri;
+   server_name reporting.yourhost.net;
+   return 301 https://reporting.yourhost.net$request_uri;
 }
 
 server {
   listen 443 ssl http2;
-  server_name reporting.alofis.pet; 
+  server_name reporting.yourhost.net; 
 
-  ssl_certificate  /etc/letsencrypt/live/alofis.pet/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/alofis.pet/privkey.pem;  
+  ssl_certificate  /etc/letsencrypt/live/yourhost.net/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/yourhost.net/privkey.pem;  
 
   ssl_session_cache           builtin:1000  shared:SSL:10m;
   ssl_protocols               TLSv1.2 TLSv1.3;

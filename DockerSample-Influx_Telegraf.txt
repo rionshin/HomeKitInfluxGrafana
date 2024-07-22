@@ -36,8 +36,8 @@ docker run -d -p 9443:9443 -p 8000:8000 -p 9000:9000 \
     --name portainer --restart always \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v portainer_data:/data \
-    -v /etc/letsencrypt/live/alofis.pet:/certs/live/alofis.pet:ro \
-    -v /etc/letsencrypt/archive/alofis.pet:/certs/archive/alofis.pet:ro \
+    -v /etc/letsencrypt/live/yourhost.net:/certs/live/yourhost.net:ro \
+    -v /etc/letsencrypt/archive/yourhost.net:/certs/archive/yourhost.net:ro \
     portainer/portainer-ce:latest \
-    --sslcert /certs/live/alofis.pet/fullchain.pem \
-    --sslkey /certs/live/alofis.pet/privkey.pem
+    --sslcert /certs/live/yourhost.net/fullchain.pem \
+    --sslkey /certs/live/yourhost.net/privkey.pem

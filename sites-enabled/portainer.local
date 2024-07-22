@@ -5,13 +5,13 @@ upstream portainer {
 
 server {
    listen 80;
-   server_name portainer.alofis.pet;
-   return 301 https://portainer.alofis.pet$request_uri;
+   server_name portainer.yourhost.net;
+   return 301 https://portainer.yourhost.net$request_uri;
  }
 
 server {
    listen 443 ssl http2;
-   server_name portainer.alofis.pet;
+   server_name portainer.yourhost.net;
    ssl_certificate  /etc/letsencrypt/live/*******/fullchain.pem;
    ssl_certificate_key  /etc/letsencrypt/live/*****/privkey.pem;
    ssl_prefer_server_ciphers on;
